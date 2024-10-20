@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Auteur{% endblock %}
+
+{% block body %}
+    <h1>Modifier l'Auteur</h1>
+
+    <form action="{{ path('app_edit_author', {'id': author.id}) }}" method="POST">
+        <div>
+            <label for="username">Nom d'utilisateur</label>
+            <input type="text" id="username" name="username" value="{{ author.username }}" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ author.email }}" required>
+        </div>
+        <div>
+            <button type="submit">Modifier</button>
+        </div>
+    </form>
+
+    <a href="{{ path('app_Affiche') }}">Retour à la liste des auteurs</a>
+{% endblock %}
